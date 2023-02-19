@@ -25,7 +25,10 @@ int main(){
     while (1){
         char line[size_bytes];
         if (readln(STDIN_FILENO,line,size_bytes) != 0){
-            printf("     %d  %s", i, line);
+            size_t size_answer = 40;
+            char answer[size_answer];
+            snprintf(answer,size_answer,"     %d  %s", i, line);
+            write(STDOUT_FILENO,answer,size_answer);
             i++;
         }
     }
