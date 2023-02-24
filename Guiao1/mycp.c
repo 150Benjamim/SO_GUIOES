@@ -12,7 +12,7 @@ int mycp(char *source_file, char *target_file){
         return 1;
     }
 
-    int target_fd = open(target_file, O_CREAT | O_TRUNC | O_WRONLY);
+    int target_fd = open(target_file, O_CREAT | O_TRUNC | O_WRONLY , 0660);
     if (target_fd < 0) {
         perror("Erro a abrir target file");
         return 1;
